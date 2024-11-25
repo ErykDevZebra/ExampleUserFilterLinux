@@ -18,6 +18,10 @@ set(AVEXECUTOR_DIR_LIB_INCLUDE "${AVEXECUTOR_DIR}include/")
 set(HEAD_DIR "../headers")
 set(SRC_DIR "../sources")
 
+# Collect all .cpp files in the src directory
+file(GLOB_RECURSE SRC_FILES "${SRC_DIR}/*.cpp")
+
+
 # Specify the include directories for avexecutor
 include_directories(${AVEXECUTOR_DIR_LIB_INCLUDE})
 
@@ -28,7 +32,7 @@ include_directories(${HEAD_DIR})
 link_directories(${AVEXECUTOR_DIR_LIB_DIR})
 
 # Add the shared library target
-add_library(user_filter_library SHARED "../sources/main.cpp")
+add_library(user_filter_library SHARED ${SRC_FILES})
 
 # Link the necessary libraries
 target_link_libraries(user_filter_library
@@ -37,13 +41,12 @@ target_link_libraries(user_filter_library
 )
 
 # Set the output name for the shared library
-set_target_properties(user_filter_library PROPERTIES OUTPUT_NAME "user_filter_library")
+set_target_properties(user_filter_library PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
 
 # Additional flags for compiling and linking (this is added automatically by CMake when using SHARED)
 set_target_properties(user_filter_library PROPERTIES
     POSITION_INDEPENDENT_CODE ON
 )
-
 
 # Add a custom target for cleaning up
 add_custom_target(clear
