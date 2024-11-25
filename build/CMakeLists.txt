@@ -1,72 +1,48 @@
 cmake_minimum_required(VERSION 3.22)
 
-project(CUSTOM_USER_FILTER)
+# Define the project name and specify the required C++ standard
+project(UserFilterLibrary)
 
-include(CMakePrintHelpers)
+# Specify the version (optional)
+set(PROJECT_VERSION 1.0)
 
-# Specify the C++ standard
+# Set the C++ standard for the project (you can change this if needed)
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+
 
 # Specify the source directory
 set(AVEXECUTOR_DIR "/home/mk6554/Downloads/Installers/5.5/avexecutor/")
-set(AVEXECUTOR_DIR_LIB_DIR "${AVEXECUTOR_DIR}/lib/x86_64-linux-gnu/")
+set(AVEXECUTOR_DIR_LIB_DIR "${AVEXECUTOR_DIR}lib/x86_64-linux-gnu/")
+set(AVEXECUTOR_DIR_LIB_INCLUDE "${AVEXECUTOR_DIR}include/")
 
-set(AVEXECUTOR_DIR_LIB_INCLUDE "${AVEXECUTOR_DIR}/include/")
-
-# Define the executable name
-set(OUT_LIB_FILE "UserFilter")
-
-set(SRC_DIR "../sources")
 set(HEAD_DIR "../headers")
+set(SRC_DIR "../sources")
 
-# Collect all .cpp files in the src directory
-file(GLOB_RECURSE SRC_FILES "${SRC_DIR}/*.cpp")
-
-# Optionally, include header files for IDEs
-file(GLOB_RECURSE HEADER_FILES "${HEAD_DIR}/*.h")
-
-
-# Optionally, include header files for IDEs
-file(GLOB_RECURSE AVEXECUTOR_DIR_LIB_INCLUDE_HEADER_FILES "${AVEXECUTOR_DIR_LIB_INCLUDE}/**.h")
-
-# Find the AVL package
-find_package(
-    AVL
-    # for a specific version, uncomment the line below
-    #5.3
-    CONFIG
-    REQUIRED
-)
-
-# copy binaries to build directory
-#copy_avl()
-
-
-message(STATUS ${AVEXECUTOR_DIR_LIB_INCLUDE} ) 
+# Specify the include directories for avexecutor
+include_directories(${AVEXECUTOR_DIR_LIB_INCLUDE})
 
 # Include directories for headers
 include_directories(${HEAD_DIR})
-include_directories(${AVEXECUTOR_DIR_LIB_INCLUDE})
-include_directories(${AVL_INCLUDE_DIRS}) # Assuming AVL_INCLUDE_DIRS is set by find_package
 
-#file(GLOB_RECURSE AVEXECUTOR_LIBS "${AVEXECUTOR_DIR_LIB_DIR}/*.so")
+# Specify the library directories for avexecutor and other dependencies
+link_directories(${AVEXECUTOR_DIR_LIB_DIR})
 
-#cmake_print_variables(AVEXECUTOR_LIBS)
-#target_link_libraries(${OUT_LIB_FILE} SHARED 
-#/home/mk6554/Downloads/avexecutor/lib/x86_64-linux-gnu/libAVL_Lite.so
-#)
+# Add the shared library target
+add_library(user_filter_library SHARED "../sources/main.cpp")
 
+# Link the necessary libraries
+target_link_libraries(user_filter_library
+    AVL_Lite  # Assuming this is available in the specified library directory
+    UserFilters  # Assuming this is available in the specified library directory
+)
 
-# Add the shared library
-add_library(${OUT_LIB_FILE} SHARED ${SRC_FILES})
+# Set the output name for the shared library
+set_target_properties(user_filter_library PROPERTIES OUTPUT_NAME "user_filter_library")
 
-# Link the AVL library
-#target_link_libraries(${OUT_LIB_FILE} PRIVATE ${AVEXECUTOR_DIR_LIB_DIR})
-
-
-# Install headers
-install(FILES ${HEADER_FILES} DESTINATION include/${OUT_LIB_FILE})
+# Additional flags for compiling and linking (this is added automatically by CMake when using SHARED)
+set_target_properties(user_filter_library PROPERTIES
+    POSITION_INDEPENDENT_CODE ON
+)
 
 
 # Add a custom target for cleaning up
@@ -76,7 +52,6 @@ add_custom_target(clear
     COMMAND ${CMAKE_COMMAND} -E remove "${CMAKE_BINARY_DIR}/CMakeCache.txt"
     COMMAND ${CMAKE_COMMAND} -E remove "${CMAKE_BINARY_DIR}/cmake_install.cmake"
     COMMAND ${CMAKE_COMMAND} -E remove "${CMAKE_BINARY_DIR}/Makefile"
-    #COMMAND ${CMAKE_COMMAND} -E remove "${CMAKE_BINARY_DIR}/${EXECUTABLE_FILE}"
 
     COMMAND ${CMAKE_COMMAND} -E remove "${CMAKE_BINARY_DIR}/*.so"
     COMMENT "Removing CMake-generated files and the executable"

@@ -1,11 +1,11 @@
 #include <iostream>
 
-#include <AVL.h>
+#include <AVL_Lite.h>
 #include<../headers/main.h>
 
-//#include "UserFilter.h"
-//#include "UserFilterLibrary.hxx"
-/* 
+#include "UserFilter.h"
+#include "UserFilterLibrary.hxx"
+
 namespace avs
 {
 	// Example image processing filter
@@ -37,6 +37,7 @@ namespace avs
 			// Get data from the inputs
 			avl::Image inImage;
 			int inThreshold;
+			//avs::LogInfo("Andrzej Duda czyni cuda !!!!!!!!!!");
 
 			ReadInput(L"inImage", inImage);
 			ReadInput(L"inThreshold", inThreshold);
@@ -86,4 +87,3 @@ namespace avs
 
 	static RegisterUserObjects registerUserObjects;
 }
-*/
