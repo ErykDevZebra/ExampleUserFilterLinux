@@ -9,7 +9,7 @@ Compiling the filter requires Ubuntu operating system with GNU gcc compiler inst
 Having Aurora™ Vision Studio [Runtime](https://www.adaptive-vision.com/en/user_area/download/) downloaded is also mandatory for header files.
 
 ### Usage
-1. Clone the repo
+1. Clone this repository
    ```sh
    git clone https://github.com/ErykDevZebra/ExampleUserFilterLinux.git
    ```
