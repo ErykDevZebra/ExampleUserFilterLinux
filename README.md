@@ -22,7 +22,7 @@ Having Aurora™ Vision Studio [Runtime](https://www.adaptive-vision.com/en/user
    #Specify the source directory
    set(AVEXECUTOR_DIR "/home/mk6554/Downloads/Installers/5.5/avexecutor/")
    ```
-5. Open console at /build directory, and run
+5. Open console at build directory, and run
    ```sh
    cmake ./
    make
