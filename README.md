@@ -15,7 +15,7 @@ Having Aurora™ Vision Studio [Runtime](https://www.adaptive-vision.com/en/user
    ```
 2. Go to CMakeLists.txt file
    ```sh
-   gedit /build/CMakeLists.txt
+   gedit build/CMakeLists.txt
    ```
 4. Edit Aurora™ Vision Studio Runtime path
    ```sh
