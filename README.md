@@ -15,15 +15,15 @@ Having Aurora AVExecutor installed is also mandatory for header files.
    git clone https://github.com/ErykDevZebra/ExampleUserFilterLinux.git
    ```
 2. Go to CMakeLists.txt file
-   ```sh
+    ```sh
    gedit /build/CMakeLists.txt
    ```
-3. Edit AVExecutor path
-  ```sh
-  # Specify the source directory
-  set(AVEXECUTOR_DIR "/home/mk6554/Downloads/Installers/5.5/avexecutor/")
-  ```
-3. Open console at /build dir, and run
+4. Edit AVExecutor path
+   ```sh
+   # Specify the source directory
+   set(AVEXECUTOR_DIR "/home/mk6554/Downloads/Installers/5.5/avexecutor/")
+   ```
+6. Open console at /build dir, and run
   ```sh
   cmake ./
   make
