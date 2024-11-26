@@ -17,7 +17,7 @@ Having Aurora™ Vision Studio [Runtime](https://www.adaptive-vision.com/en/user
    ```sh
    gedit /build/CMakeLists.txt
    ```
-4. Edit AVExecutor path
+4. Edit Aurora™ Vision Studio Runtime path
    ```sh
    #Specify the source directory
    set(AVEXECUTOR_DIR "/home/mk6554/Downloads/Installers/5.5/avexecutor/")
