@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.16)
 
 # Define the project name and specify the required C++ standard
 project(UserFilterLibrary)
