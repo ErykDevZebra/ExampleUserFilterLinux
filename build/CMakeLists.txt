@@ -9,10 +9,26 @@ set(PROJECT_VERSION 1.0)
 # Set the C++ standard for the project (you can change this if needed)
 set(CMAKE_CXX_STANDARD 17)
 
-
 # Specify the source directory
 set(AVEXECUTOR_DIR "/home/mk6554/Downloads/Installers/5.5/avexecutor/")
-set(AVEXECUTOR_DIR_LIB_DIR "${AVEXECUTOR_DIR}lib/x86_64-linux-gnu/")
+
+message(STATUS "AVExecutor path: ${AVEXECUTOR_DIR}")
+if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64" OR CMAKE_GENERATOR_PLATFORM MATCHES "AMD64")
+	message(STATUS "Building for ${CMAKE_SYSTEM_PROCESSOR} platform")
+	set(AVEXECUTOR_DIR_LIB_DIR "${AVEXECUTOR_DIR}lib/x86_64-linux-gnu/")
+
+elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "i[3-6]86 "OR CMAKE_GENERATOR_PLATFORM MATCHES "x86")
+	message(STATUS "Building for ${CMAKE_SYSTEM_PROCESSOR} platform")
+	set(AVEXECUTOR_DIR_LIB_DIR "${AVEXECUTOR_DIR}lib/x86_64-linux-gnu//")
+
+elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64")
+	message(STATUS "Building for ${CMAKE_SYSTEM_PROCESSOR} platform")
+	set(AVEXECUTOR_DIR_LIB_DIR "${AVEXECUTOR_DIR}lib/aarch64-linux-gnu/")
+else()
+	message(WARNING "Unsuported platform: ${CMAKE_SYSTEM_PROCESSOR}")
+	set(AVEXECUTOR_DIR_LIB_DIR "${AVEXECUTOR_DIR}lib/x86_64-linux-gnu/")
+endif()
+
 set(AVEXECUTOR_DIR_LIB_INCLUDE "${AVEXECUTOR_DIR}include/")
 
 set(HEAD_DIR "../headers")
@@ -20,7 +36,6 @@ set(SRC_DIR "../sources")
 
 # Collect all .cpp files in the src directory
 file(GLOB_RECURSE SRC_FILES "${SRC_DIR}/*.cpp")
-
 
 # Specify the include directories for avexecutor
 include_directories(${AVEXECUTOR_DIR_LIB_INCLUDE})
