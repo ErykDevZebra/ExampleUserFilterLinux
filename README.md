@@ -20,7 +20,7 @@ Having Aurora™ Vision Studio [Runtime](https://www.adaptive-vision.com/en/user
 4. Edit Aurora™ Vision Studio Runtime path
    ```sh
    #Specify the source directory
-   set(AVEXECUTOR_DIR "/home/mk6554/Downloads/Installers/5.5/avexecutor/")
+   set(AVEXECUTOR_DIR "/etc/avexecutor/")
    ```
 5. Open console at build directory, and run
    ```sh
