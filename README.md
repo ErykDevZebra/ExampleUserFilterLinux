@@ -22,10 +22,10 @@ Having Aurora™ Vision Studio [Runtime](https://www.adaptive-vision.com/en/user
    #Specify the source directory
    set(AVEXECUTOR_DIR "/etc/avexecutor/")
    ```
-5. Open console at build directory, and run
+5. Open console at cloned repository, and run
    ```sh
-   cmake ./
-   make
+   sudo chmod +x build.sh
+   ./build.sh
    ```
 
 Project can use full Aurora™ Vision Library insted of Lite Version from the Aurora™ Vision Studio Runtime includes, to enable full library please check this [CMakeFile](https://github.com/ErykDevZebra/EmptyAVLProject/blob/main/build/CMakeLists.txt)
