@@ -8,22 +8,27 @@ To get a local copy up and running follow these simple steps.
 Compiling the filter requires Ubuntu operating system with GNU gcc compiler installed. 
 Having Aurora™ Vision Studio [Runtime](https://www.adaptive-vision.com/en/user_area/download/) downloaded is also mandatory for header files.
 
+CMake installation on Ubuntu
+```bash
+sudo apt update && sudo apt install -y build-essential cmake
+```
+
 ### Usage
 1. Clone this repository
-   ```sh
+   ```bash
    git clone https://github.com/ErykDevZebra/ExampleUserFilterLinux.git
    ```
 2. Go to CMakeLists.txt file
-   ```sh
+   ```bash
    gedit build/CMakeLists.txt
    ```
 4. Edit Aurora™ Vision Studio Runtime path
-   ```sh
+   ```bash
    #Specify the source directory
    set(AVEXECUTOR_DIR "/etc/avexecutor/")
    ```
 5. Open console at cloned repository, and run
-   ```sh
+   ```bash
    sudo chmod +x build.sh
    ./build.sh
    ```
