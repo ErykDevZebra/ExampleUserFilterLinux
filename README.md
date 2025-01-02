@@ -5,7 +5,7 @@ This repository contains ready to use project template for compiling a User File
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
-Compiling the filter requires Ubuntu operating system with GNU gcc compiler installed. 
+Compiling the filter requires Ubuntu operating system with GNU gcc compiler installed and CMake. 
 Having Aurora™ Vision Studio [Runtime](https://www.adaptive-vision.com/en/user_area/download/) downloaded is also mandatory for header files.
 
 CMake installation on Ubuntu
