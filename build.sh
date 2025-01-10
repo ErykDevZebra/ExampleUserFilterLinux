@@ -2,5 +2,5 @@
 
 cd build
 
-cmake ./
-make
+cmake .
+cmake --build . --parallel 8
