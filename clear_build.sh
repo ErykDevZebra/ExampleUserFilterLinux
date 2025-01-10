@@ -2,4 +2,7 @@
 
 cd build
 
-make clear
+if [ -e Makefile ]
+then
+    make clear
+fi
