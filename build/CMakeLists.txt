@@ -10,7 +10,7 @@ set(PROJECT_VERSION 1.0)
 set(CMAKE_CXX_STANDARD 17)
 
 # Specify the source directory
-set(AVEXECUTOR_DIR "/home/mk6554/Downloads/Installers/5.5/avexecutor/")
+set(AVEXECUTOR_DIR "/home/mk6554/Downloads/avexecutor/")
 
 message(STATUS "AVExecutor path: ${AVEXECUTOR_DIR}")
 if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64" OR CMAKE_GENERATOR_PLATFORM MATCHES "AMD64")
