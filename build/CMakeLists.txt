@@ -10,7 +10,7 @@ set(PROJECT_VERSION 1.0)
 set(CMAKE_CXX_STANDARD 17)
 
 # Specify the source directory
-set(AVEXECUTOR_DIR "/home/mk6554/Downloads/avexecutor/")
+set(AVEXECUTOR_DIR "/etc/avexecutor/")
 
 message(STATUS "AVExecutor path: ${AVEXECUTOR_DIR}")
 if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64" OR CMAKE_GENERATOR_PLATFORM MATCHES "AMD64")
@@ -35,22 +35,10 @@ set(AVEXECUTOR_DIR_LIB_INCLUDE "${AVEXECUTOR_DIR}include/")
 set(HEAD_DIR "../headers")
 set(SRC_DIR "../sources")
 
-# Collect all .cpp files in the src directory
-file(GLOB_RECURSE SRC_FILES "${SRC_DIR}/*.cpp")
-
-# Optionally, collect header files for IDEs
-file(GLOB_RECURSE HEADER_FILES
-    "${HEAD_DIR}/*.h"
-    "${HEAD_DIR}/*.hpp"
-    )
-
-foreach(header_file ${HEADER_FILES})
-    message(STATUS "Found header file: ${header_file}")
-endforeach()
-
-foreach(src_file ${SRC_FILES})
-    message(STATUS "Found source file: ${src_file}")
-endforeach()
+set(SRC_FILES
+    ${SRC_DIR}/main.cpp
+    #${SRC_DIR}/other.cpp
+)
 
 # Specify the include directories for avexecutor
 include_directories(${AVEXECUTOR_DIR_LIB_INCLUDE})
