@@ -37,7 +37,7 @@ sudo apt update && sudo apt install -y build-essential cmake
    ./run.sh
    ```
 
-Project can use full Aurora™ Vision Library insted of Lite Version from the Aurora™ Vision Studio Runtime includes, to enable full library please check this [CMakeFile](https://github.com/ErykDevZebra/EmptyAVLProject/blob/main/build/CMakeLists.txt)
+Project can use full Aurora™ Vision Library insted of Lite Version from the Aurora™ Vision Studio Runtime includes, to full library please use this [branch](https://github.com/ErykDevZebra/ExampleUserFilterLinux/tree/full_AVL)
 
 Creating custom [User filters for Aurora™ Vision Runtime](https://docs.adaptive-vision.com/current/studio/extensibility/CreatingUserFilters.html#struct)
 
