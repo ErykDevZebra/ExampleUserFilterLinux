@@ -23,12 +23,14 @@ sudo apt update && sudo apt install -y build-essential cmake
    ```bash
    #Specify the source directory
    set(AVEXECUTOR_DIR "/etc/avexecutor/")
-   
-   
-   Executor_Path='/etc/avexecutor/bin/Console'
-   
    ```
-3. Open console at cloned repository, and run
+   
+3. Edit Aurora™ Vision Studio Runtime path in run.sh
+   ```bash
+   Executor_Path='/etc/avexecutor/bin/Console'
+   ```
+   
+4. Open console at cloned repository, and run
    ```bash
    sudo chmod +x build.sh
    sudo chmod +x run.sh
