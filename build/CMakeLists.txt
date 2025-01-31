@@ -40,6 +40,14 @@ set(SRC_FILES
     #${SRC_DIR}/other.cpp
 )
 
+find_package(
+	AVL
+	
+	CONFIG
+	REQUIRED
+)
+
+
 # Specify the include directories for avexecutor
 include_directories(${AVEXECUTOR_DIR_LIB_INCLUDE})
 
@@ -54,9 +62,12 @@ add_library(user_filter_library SHARED ${SRC_FILES})
 
 # Link the necessary libraries
 target_link_libraries(user_filter_library
-    AVL_Lite  # Assuming this is available in the specified library directory
+    AVL
+    #AVL_Lite  # Assuming this is available in the specified library directory
     UserFilters  # Assuming this is available in the specified library directory
 )
+
+
 
 # Set the output name for the shared library
 set_target_properties(user_filter_library PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
