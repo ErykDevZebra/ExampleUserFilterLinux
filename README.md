@@ -18,19 +18,21 @@ sudo apt update && sudo apt install -y build-essential cmake
    ```bash
    git clone https://github.com/ErykDevZebra/ExampleUserFilterLinux.git
    ```
-2. Go to CMakeLists.txt file
-   ```bash
-   gedit build/CMakeLists.txt
-   ```
-4. Edit Aurora™ Vision Studio Runtime path
+
+2. Edit Aurora™ Vision Studio Runtime path in build/CMakeLists.txt and run.sh
    ```bash
    #Specify the source directory
    set(AVEXECUTOR_DIR "/etc/avexecutor/")
+   
+   
+   Executor_Path='/etc/avexecutor/bin/Console'
+   
    ```
-5. Open console at cloned repository, and run
+3. Open console at cloned repository, and run
    ```bash
    sudo chmod +x build.sh
-   ./build.sh
+   sudo chmod +x run.sh
+   ./run.sh
    ```
 
 Project can use full Aurora™ Vision Library insted of Lite Version from the Aurora™ Vision Studio Runtime includes, to enable full library please check this [CMakeFile](https://github.com/ErykDevZebra/EmptyAVLProject/blob/main/build/CMakeLists.txt)

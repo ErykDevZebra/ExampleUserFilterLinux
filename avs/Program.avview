@@ -1,0 +1,10 @@
+﻿<ViewSets Current="Custom1">
+  <ViewSet Name="Custom1">
+    <HSplit>
+      <Views Width="0.998" Height="0.996">
+        <WebHmiView />
+        <View />
+      </Views>
+    </HSplit>
+  </ViewSet>
+</ViewSets>

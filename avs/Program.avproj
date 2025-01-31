@@ -1,0 +1,9 @@
+﻿<AuroraVisionProject Name="Program" Version="5.5.2" Revision="78779" Product="Professional" StartUpProgramName="Main">
+  <Files>
+    <Program Path="Program.avcode" />
+    <View Path="Program.avview" />
+    <WebHMI Path="Program.hxaml" />
+    <UserFilters Path64="../build/libUserFilterLibrary.so" />
+  </Files>
+  <AutoPreview>con_12c13248_3330_41cd_8e23_82e69b6d83c8</AutoPreview>
+</AuroraVisionProject>

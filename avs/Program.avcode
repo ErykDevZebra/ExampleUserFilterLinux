@@ -1,0 +1,34 @@
+extern public Real whmi_con_slider1_Value = 0.000000
+
+//:USETYPE WORKERTASK
+public Main()
+{
+
+section ACQUIRE:
+	//:HIDDENPORT[inLoadAlphaChannel] TRUE
+	LoadImage
+	(
+		inFile: "./image/input.png"
+		inLoadAlphaChannel: False
+		outImage: con_12c13248_3330_41cd_8e23_82e69b6d83c8
+	)
+
+section PROCESS:
+	//:HIDDENPORT[inMaxVal] TRUE
+	//:HIDDENPORT[inThresholdType] TRUE
+	//:HIDDENPORT[inUseOtsu] TRUE
+	CustomThreshold
+	(
+		inImage: con_12c13248_3330_41cd_8e23_82e69b6d83c8
+		inThreshold: whmi_con_slider1_Value
+		outImage: con_fdd53b2c_41b8_4a57_b9f7_1a2ccfbfcc51
+	)
+
+	//:HIDDENPORT[inDelay] TRUE
+	Loop
+	(
+		inShouldLoop: True
+		inDelay: 5
+	)
+}
+

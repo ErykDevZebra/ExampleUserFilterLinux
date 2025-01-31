@@ -37,8 +37,7 @@ namespace avs
 			// Get data from the inputs
 			avl::Image inImage;
 			int inThreshold;
-			//avs::LogInfo("Andrzej Duda czyni cuda !!!!!!!!!!");
-
+			
 			ReadInput(L"inImage", inImage);
 			ReadInput(L"inThreshold", inThreshold);
 
