@@ -6,7 +6,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 Compiling the filter requires Ubuntu operating system with GNU gcc compiler installed and CMake. 
-Having Aurora™ Vision Studio [Runtime](https://www.adaptive-vision.com/en/user_area/download/) downloaded is also mandatory for header files.
+Having Aurora™ Vision Studio [Runtime](https://www.adaptive-vision.com/en/user_area/download/) downloaded is also mandatory, also you need Aurora™ Vision [Library](https://www.adaptive-vision.com/en/user_area/download/) installed.
 
 CMake installation on Ubuntu
 ```bash
@@ -36,8 +36,6 @@ sudo apt update && sudo apt install -y build-essential cmake
    sudo chmod +x run.sh
    ./run.sh
    ```
-
-Project can use full Aurora™ Vision Library insted of Lite Version from the Aurora™ Vision Studio Runtime includes, to enable full library please check this [CMakeFile](https://github.com/ErykDevZebra/EmptyAVLProject/blob/main/build/CMakeLists.txt)
 
 Creating custom [User filters for Aurora™ Vision Runtime](https://docs.adaptive-vision.com/current/studio/extensibility/CreatingUserFilters.html#struct)
 
